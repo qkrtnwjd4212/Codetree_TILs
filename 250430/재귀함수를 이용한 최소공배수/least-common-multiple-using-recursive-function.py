@@ -12,7 +12,7 @@ def lcm(tmp_lcm, cnt):
         return tmp_lcm
     
     #print(tmp_lcm, cnt)
-    next_lcm = gcd(tmp_lcm, arr[cnt]) * tmp_lcm * arr[cnt]
+    next_lcm = tmp_lcm * arr[cnt] // gcd(tmp_lcm, arr[cnt])
     return lcm(next_lcm, cnt+1)
 
-print(lcm((gcd(arr[0], arr[1]) * arr[0] * arr[1]), 2))
+print(lcm(arr[0], 1))
