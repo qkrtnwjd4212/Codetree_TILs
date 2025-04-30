@@ -7,12 +7,12 @@ def gcd(a, b): # 최대공약수
     
     return gcd(b, a % b)
 
-def lcm(a, b, cnt):
-    if cnt == n - 1:
-        return a
+def lcm(tmp_lcm, cnt):
+    if cnt >= n - 1:
+        return tmp_lcm
     
-    tmp_lcm = gcd(a, b) * a * b
-    #print(tmp_lcm)
-    return lcm(tmp_lcm, arr[cnt+1], cnt+1)
+    #print(tmp_lcm, cnt)
+    next_lcm = gcd(tmp_lcm, arr[cnt]) * tmp_lcm * arr[cnt]
+    return lcm(next_lcm, cnt+1)
 
-print(lcm(arr[0], arr[1], 1))
+print(lcm((gcd(arr[0], arr[1]) * arr[0] * arr[1]), 2))
