@@ -8,7 +8,7 @@ def gcd(a, b): # 최대공약수
     return gcd(b, a % b)
 
 def lcm(tmp_lcm, cnt):
-    if cnt >= n - 1:
+    if cnt >= n:
         return tmp_lcm
     
     #print(tmp_lcm, cnt)
