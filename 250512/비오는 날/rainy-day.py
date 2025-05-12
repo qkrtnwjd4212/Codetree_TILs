@@ -9,7 +9,11 @@ class weather:
 
 weathers = [weather(d, dy, w) for d, dy, w in arr]
 
-for i in range(n):
-    if weathers[i].w == 'Rain':
-        print(f"{weathers[i].date} {weathers[i].day} {weathers[i].w}")
-        break
+tmp = -1
+for i, wt in enumerate(weathers):
+    if wt.w == 'Rain' and tmp == -1:
+        tmp = i
+    elif wt.w == 'Rain' and wt.date < weathers[tmp].date:
+        tmp = i
+
+print(f"{weathers[tmp].date} {weathers[tmp].day} {weathers[tmp].w}")
