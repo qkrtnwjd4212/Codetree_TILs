@@ -1,7 +1,7 @@
 n = int(input())
 segments = [tuple(map(int, input().split())) for _ in range(n)]
 
-arr = [0] * 100
+arr = [0] * 101
 
 for i in range(n):
     a, b = segments[i]
