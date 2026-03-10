@@ -13,13 +13,13 @@ cnt = 0
 
 for i in range(n):
     if dir[i] == 'R':
-        for j in range(cur + 10, cur + x[i] + 10):
-            arr[j] += 1
-        cur += (x[i])
+        nx = cur + x[i]
     else:
-        for j in range(cur + 10, cur - x[i] + 10, -1):
-            arr[j] += 1
-        cur -= (x[i])
+        nx = cur - x[i]
+    
+    for i in range(min(cur, nx) + 1000, max(cur, nx) + 1000):
+        arr[i] += 1
+    cur = nx
 
 for x in arr:
     if x >= 2:
